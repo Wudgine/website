@@ -37,6 +37,13 @@ export default defineNuxtConfig({
     }
   },
 
+  experimental: {
+    // ОТКЛЮЧАЕМ РАЗДЕЛЕНИЕ ДАННЫХ В ОТДЕЛЬНЫЕ JSON-ФАЙЛЫ
+    // Это заставляет Nuxt встраивать данные страницы прямо в HTML,
+    // устраняя все ошибки 404 для _payload.json на статических хостах.
+    payloadExtraction: false
+  },
+
   // eslint: {
   //   config: {
   //     stylistic: {
