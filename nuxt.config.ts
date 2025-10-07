@@ -9,6 +9,12 @@ export default defineNuxtConfig({
     'nuxt-og-image'
   ],
 
+  app: {
+    // ВАЖНО: Укажите имя вашего репозитория (включая слеши)
+    // Если имя репозитория Wudgine, используйте '/Wudgine/'
+    baseURL: process.env.NODE_ENV === 'production' ? '/Wudgine/' : '/',
+  },
+
   devtools: {
     enabled: true
   },
@@ -16,7 +22,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/docs': { redirect: '/docs/getting-started', prerender: false },
+    '/**': { prerender: true }//todo: это точно нужно?
   },
 
   compatibilityDate: '2024-07-11',
