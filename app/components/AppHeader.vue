@@ -24,7 +24,7 @@ const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
 // Функция для переключения видимости левой панели
 const toggleLeftPanel = () => {
   // Переключает состояние navigation, которое управляет видимостью левой панели
-  navigation.value = !navigation.value
+  // navigation.value = !navigation.value
 }
 
 // // Функция для переключения видимости правой панели (TOC)

@@ -22,7 +22,6 @@ const isCollaspedRightPanel = ref(false);
           <UContentSearchButton :collapsed="false"
                                 class="overflow-hidden w-full"
                                 :ui="{
-                                              leading: '',
                                               default: 'none',
                                               trailing: isLeftSidebarOpen?'-ml-5':'',
                                             }"
