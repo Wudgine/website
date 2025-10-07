@@ -30,7 +30,7 @@ jobs:
 
       - name: Build
         # Команда Nuxt для генерации статики
-        run: npm run generate
+        run: pnpm run generate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
