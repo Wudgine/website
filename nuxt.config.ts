@@ -22,8 +22,8 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false },
-    '/**': { prerender: true }//todo: это точно нужно?
+    '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
+    // '/**': { prerender: true }//todo: это точно нужно?
   },
 
   compatibilityDate: '2024-07-11',
@@ -37,12 +37,12 @@ export default defineNuxtConfig({
     }
   },
 
-  experimental: {
-    // ОТКЛЮЧАЕМ РАЗДЕЛЕНИЕ ДАННЫХ В ОТДЕЛЬНЫЕ JSON-ФАЙЛЫ
-    // Это заставляет Nuxt встраивать данные страницы прямо в HTML,
-    // устраняя все ошибки 404 для _payload.json на статических хостах.
-    payloadExtraction: false
-  },
+  // experimental: {
+  //   // ОТКЛЮЧАЕМ РАЗДЕЛЕНИЕ ДАННЫХ В ОТДЕЛЬНЫЕ JSON-ФАЙЛЫ
+  //   // Это заставляет Nuxt встраивать данные страницы прямо в HTML,
+  //   // устраняя все ошибки 404 для _payload.json на статических хостах.
+  //   payloadExtraction: false
+  // },
 
   // eslint: {
   //   config: {

@@ -37,12 +37,13 @@ const toggleLeftPanel = () => {
 <template>
   <UHeader>
     <template #left>
-      <UButton icon="i-lucide-logs" size="md" color="primary" variant="subtle" @click="toggleLeftPanel" />
+<!--      <UButton icon="i-lucide-logs" size="md" color="primary" variant="subtle" @click="toggleLeftPanel" />-->
 
       <NuxtLink to="/">
         <AppLogo class="w-auto h-6 shrink-0" />
+<!--        <AppLogo2 class="w-auto h-6 shrink-0" />-->
       </NuxtLink>
-      <TemplateMenu />
+<!--      <TemplateMenu />-->
 <!--      <UButton-->
 <!--        <UButton-->
 <!--          icon="i-heroicons-bars-3-20-solid"-->
