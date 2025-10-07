@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 // --- СКРИПТОВАЯ ЧАСТЬ ОСТАЕТСЯ БЕЗ ИЗМЕНЕНИЙ ---
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, type CSSProperties } from 'vue' // <-- ИМПОРТИРУЕМ CSSProperties
 
 const props = withDefaults(defineProps<{
   resizable?: boolean;
@@ -94,7 +94,7 @@ const toggleCollapse = () => {
   isCollapsed.value = !isCollapsed.value;
 };
 
-const sidebarStyle = computed(() => ({
+const sidebarStyle = computed((): CSSProperties => ({
   width: `${isCollapsed.value ? props.collapsedWidth : width.value}px`,
   userSelect: isResizing.value ? 'none' : 'auto'
 }));
