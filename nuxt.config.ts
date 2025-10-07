@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   app: {
     // ВАЖНО: Укажите имя вашего репозитория (включая слеши)
     // Если имя репозитория Wudgine, используйте '/Wudgine/'
-    baseURL: process.env.NODE_ENV === 'production' ? '/Wudgine/' : '/',
+    baseURL: '/'//process.env.NODE_ENV === 'production' ? '/Wudgine/' : '/',
   },
 
   devtools: {
