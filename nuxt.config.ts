@@ -63,8 +63,18 @@ export default defineNuxtConfig({
   app: {
     // ВАЖНО: Укажите имя вашего репозитория (включая слеши)
     // Если имя репозитория Wudgine, используйте '/Wudgine/'
-    baseURL: '/'//process.env.NODE_ENV === 'production' ? '/Wudgine/' : '/',
+    baseURL: '/', //process.env.NODE_ENV === 'production' ? '/Wudgine/' : '/',,
+    head: {
+      meta: [
+        {
+          // Здесь вы меняете текст:
+          name: 'description',
+          content: 'Современный игровой движок с высокопроизводительным C++ ядром, графикой на Vulkan, архитектурой ECS и поддержкой веб-интерфейсов. Гибкость модулей, плагины и кроссплатформенность.'
+        },
+      ],
+    },
   },
+
 
   devtools: {
     enabled: true
