@@ -7,18 +7,28 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    // '@nuxtjs/i18n'
+    '@nuxtjs/i18n'
   ],
 
-  // i18n: {
-  //   strategy: 'prefix',
-  //   locales: [
-  //     { code: 'en', iso: 'en-US', name: 'English' },
-  //     { code: 'ru', iso: 'ru-RU', name: 'Русский' },
-  //     // ... другие языки
-  //   ],
-  //   defaultLocale: 'en',
-  // },
+  i18n: {
+    // meta: false,
+    // strategy: 'prefix_except_default',
+    strategy: 'prefix',
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'ru', iso: 'ru-RU', name: 'Русский' },
+      // ... другие языки
+    ],
+    defaultLocale: 'rue',
+  },
+
+  content: {
+    // Включаем экспериментальные функции для поиска
+      // Включаем индексированный поиск
+      search: {
+        indexed: true
+    }
+  },
 
   app: {
     // ВАЖНО: Укажите имя вашего репозитория (включая слеши)

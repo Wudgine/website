@@ -34,7 +34,7 @@ const createImageSchema = () => z.object({
 
 export const collections = {
   index: defineCollection({
-    source: '0.index.yml',
+    source: '*/0.index.yml',
     type: 'page',
     schema: z.object({
       hero: z.object(({
@@ -72,11 +72,11 @@ export const collections = {
     })
   }),
   docs: defineCollection({
-    source: '1.docs/**/*',
+    source: '*/1.docs/**/*',
     type: 'page'
   }),
   pricing: defineCollection({
-    source: '2.pricing.yml',
+    source: '*/2.pricing.yml',
     type: 'page',
     schema: z.object({
       plans: z.array(
@@ -109,11 +109,11 @@ export const collections = {
     })
   }),
   blog: defineCollection({
-    source: '3.blog.yml',
+    source: '*/3.blog.yml',
     type: 'page'
   }),
   posts: defineCollection({
-    source: '3.blog/**/*',
+    source: '*/3.blog/**/*',
     type: 'page',
     schema: z.object({
       image: z.object({ src: z.string().nonempty().editor({ input: 'media' }) }),
@@ -129,11 +129,11 @@ export const collections = {
     })
   }),
   changelog: defineCollection({
-    source: '4.changelog.yml',
+    source: '*/4.changelog.yml',
     type: 'page'
   }),
   versions: defineCollection({
-    source: '4.changelog/**/*',
+    source: '*/4.changelog/**/*',
     type: 'page',
     schema: z.object({
       title: z.string().nonempty(),

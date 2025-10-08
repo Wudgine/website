@@ -59,6 +59,7 @@ const toggleLeftPanel = () => {
     />
 
     <template #right>
+      <LanguageSelector/>
       <UColorModeButton />
 
       <UButton
