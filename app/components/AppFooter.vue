@@ -10,23 +10,23 @@ const columns = [{
   }, {
     label: 'Changelog'
   }]
-}, {
-  label: 'Features',
-  children: [{
-    label: 'Affiliates'
-  }, {
-    label: 'Portal'
-  }, {
-    label: 'Jobs'
-  }, {
-    label: 'Sponsors'
-  }]
+// }, {
+//   label: 'Features',
+//   children: [{
+//     label: 'Affiliates'
+//   }, {
+//     label: 'Portal'
+//   }, {
+//     label: 'Jobs'
+//   }, {
+//     label: 'Sponsors'
+//   }]
 }, {
   label: 'Company',
   children: [{
     label: 'About'
-  }, {
-    label: 'Pricing'
+  // }, {
+  //   label: 'Pricing'
   }, {
     label: 'Careers'
   }, {
@@ -59,38 +59,38 @@ function onSubmit() {
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
-          <template #right>
-            <form @submit.prevent="onSubmit">
-              <UFormField
-                name="email"
-                label="Subscribe to our newsletter"
-                size="lg"
-              >
-                <UInput
-                  v-model="email"
-                  type="email"
-                  class="w-full"
-                  placeholder="Enter your email"
-                >
-                  <template #trailing>
-                    <UButton
-                      type="submit"
-                      size="xs"
-                      color="neutral"
-                      label="Subscribe"
-                    />
-                  </template>
-                </UInput>
-              </UFormField>
-            </form>
-          </template>
+<!--          <template #right>-->
+<!--            <form @submit.prevent="onSubmit">-->
+<!--              <UFormField-->
+<!--                name="email"-->
+<!--                label="Subscribe to our newsletter"-->
+<!--                size="lg"-->
+<!--              >-->
+<!--                <UInput-->
+<!--                  v-model="email"-->
+<!--                  type="email"-->
+<!--                  class="w-full"-->
+<!--                  placeholder="Enter your email"-->
+<!--                >-->
+<!--                  <template #trailing>-->
+<!--                    <UButton-->
+<!--                      type="submit"-->
+<!--                      size="xs"-->
+<!--                      color="neutral"-->
+<!--                      label="Subscribe"-->
+<!--                    />-->
+<!--                  </template>-->
+<!--                </UInput>-->
+<!--              </UFormField>-->
+<!--            </form>-->
+<!--          </template>-->
         </UFooterColumns>
       </UContainer>
     </template>
 
     <template #left>
       <p class="text-muted text-sm">
-        Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        Wudgine • © {{ new Date().getFullYear() }}
       </p>
     </template>
 

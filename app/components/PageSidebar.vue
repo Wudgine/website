@@ -2,11 +2,12 @@
   <aside :class="['page-sidebar', { 'is-collapsed': isCollapsed, 'is-resizing': isResizing, 'is-handle-hovered': isHoveringHandle }]" :style="sidebarStyle"
          :side="side"
   >
-    <button v-if="collapsible" class="collapse-toggle" @click="toggleCollapse">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
-        <path fill="currentColor" d="m14 17l-5-5l5-5l1.41 1.41L11.83 12l3.58 3.59z"/>
-      </svg>
-    </button>
+<!--    <button v-if="collapsible" class="collapse-toggle" @click="toggleCollapse">-->
+<!--      qwe-->
+<!--      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">-->
+<!--        <path fill="currentColor" d="m14 17l-5-5l5-5l1.41 1.41L11.83 12l3.58 3.59z"/>-->
+<!--      </svg>-->
+<!--    </button>-->
     <div class="sidebar-content">
       <slot />
     </div>
@@ -30,6 +31,8 @@ const props = withDefaults(defineProps<{
   maxWidth?: number;
   collapsedWidth?: number;
   defaultCollapsed?: boolean;
+  isCollapsed?: boolean;
+  toggle?: boolean
   side?: 'left' | 'right';
 }>(), {
   resizable: true,
@@ -39,11 +42,15 @@ const props = withDefaults(defineProps<{
   maxWidth: 512,
   collapsedWidth: 64,
   defaultCollapsed: false,
+  isCollapsed: false,
+  toggle: false,
   side: 'left'
 });
 
+const emit = defineEmits(['update:isCollapsed']);
+
 const width = ref(props.defaultWidth);
-const isCollapsed = ref(props.defaultCollapsed);
+const isCollapsedLocal = ref(props.defaultCollapsed);
 const isResizing = ref(false);
 const isHoveringHandle = ref(false);
 
@@ -91,11 +98,29 @@ const stopResize = () => {
 };
 
 const toggleCollapse = () => {
-  isCollapsed.value = !isCollapsed.value;
+  // Установка collapsedState.value вызовет сеттер, который либо emit, либо обновит локальное ref.
+  collapsedState.value = !collapsedState.value;
 };
 
+const collapsedState = computed({
+  get() {
+    // Если пропс 'isCollapsed' передан (т.е. используется v-model:is-collapsed), используем его.
+    // Если нет (т.е. undefined), используем локальное состояние (для внутреннего управления).
+    return props.isCollapsed !== undefined ? props.isCollapsed : isCollapsedLocal.value;
+  },
+  set(newValue: boolean) {
+    if (props.isCollapsed !== undefined) {
+      // Если используется модель, отправляем событие
+      emit('update:isCollapsed', newValue);
+    } else {
+      // Иначе, обновляем локальное состояние
+      isCollapsedLocal.value = newValue;
+    }
+  }
+});
+
 const sidebarStyle = computed((): CSSProperties => ({
-  width: `${isCollapsed.value ? props.collapsedWidth : width.value}px`,
+  width: `${collapsedState.value ? props.collapsedWidth : width.value}px`,
   userSelect: isResizing.value ? 'none' : 'auto'
 }));
 
@@ -134,8 +159,7 @@ onBeforeUnmount(() => {
 
 /* Остальные стили без изменений */
 .sidebar-content {
-  flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 
@@ -153,6 +177,7 @@ onBeforeUnmount(() => {
   width: 9px;
   cursor: col-resize;
   background-color: transparent;
+  z-index: 10000;
 }
 
 /*

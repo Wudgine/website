@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"></feGaussianBlur>
+      <feFlood flood-color="gold" flood-opacity="1" result="color"></feFlood>
+      <feComposite in="color" in2="blur" operator="in" result="glow_blur"></feComposite>
+      <feMerge>
+        <feMergeNode in="glow_blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g transform="translate(150,150)" filter="url(#glow)">
+
+    <g stroke="gold" stroke-width="1.5" stroke-opacity="0.8">
+      <line x1="-50" y1="-50" x2="50" y2="-50"></line>
+      <line x1="50" y1="-50" x2="100" y2="20"></line>
+      <line x1="-50" y1="-50" x2="-20" y2="80"></line>
+      <line x1="100" y1="20" x2="-20" y2="80"></line>
+    </g>
+
+    <g fill="orange" stroke="gold" stroke-width="1">
+      <circle cx="-50" cy="-50" r="4"></circle> <circle cx="50" cy="-50" r="4"></circle>  <circle cx="100" cy="20" r="4"></circle>  <circle cx="-20" cy="80" r="4"></circle>  </g>
+
+  </g>
+</svg>

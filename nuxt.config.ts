@@ -6,8 +6,19 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-og-image'
+    'nuxt-og-image',
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    strategy: 'prefix',
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'ru', iso: 'ru-RU', name: 'Русский' },
+      // ... другие языки
+    ],
+    defaultLocale: 'en',
+  },
 
   app: {
     // ВАЖНО: Укажите имя вашего репозитория (включая слеши)

@@ -31,12 +31,19 @@ defineOgImageComponent('Saas')
 
 <template>
   <UPage v-if="page" class="flex lg:flex flex-row">
+
+    <UContentToc class="overflow-y-hidden! lg:hidden" highlight highlight-color="neutral" color="neutral"
+                 :links="page.body.toc.links"/>
     <UPageHeader
       :title="page.title"
       :description="page.description"
-    />
+    >
+
+
+    </UPageHeader>
 
     <UPageBody>
+
       <ContentRenderer
         v-if="page.body"
         :value="page"
@@ -58,10 +65,14 @@ defineOgImageComponent('Saas')
               :collapsed-width="72"
               side="right"
               v-if="page?.body?.toc?.links?.length"
-              class="sticky! top-0 h-screen"
+              class="top-0 h-screen hidden! lg:sticky! lg:flex!"
             >
-              <UContentToc class="sm:px-2 sm:-mx-2" highlight highlight-color="neutral" color="neutral"
-                           :links="page.body.toc.links"/>
+              <UContentToc class="sm:px-4 sm:-mx-2 overflow-x-hidden" highlight highlight-color="neutral" color="neutral"
+                           :links="page.body.toc.links"
+                           :ui="{
+                             container: 'lg:py-0! lg:pt-4!'
+                           }"
+              />
 
             </PageSidebar>
 <!--      <UContentToc :links="page.body.toc.links" />-->
