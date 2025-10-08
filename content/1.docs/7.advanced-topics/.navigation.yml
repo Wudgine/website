@@ -1,0 +1,13 @@
+title: Продвинутые темы
+icon: ph:code-bold
+navigation:
+  - { title: Обзор, icon: ph:book-open-text, to: /advanced-topics/overview }
+  - { title: Многопоточность, icon: ph:arrows-out-line-horizontal, to: /advanced-topics/multithreading }
+  - { title: Оптимизация производительности, icon: ph:gauge, to: /advanced-topics/performance-optimization }
+  - { title: Сетевое взаимодействие, icon: ph:globe-network, to: /advanced-topics/networking }
+  - { title: Расширенная работа с ресурсами, icon: ph:file-plus, to: /advanced-topics/advanced-resources }
+  - { title: Отладка и профилирование, icon: ph:bug, to: /advanced-topics/debugging-profiling }
+  # Пункт, который не реализован и критически необходим (без возможности перехода)
+  - { title: Интеграция с внешними сервисами, icon: ph:cloud, status: critical-wip }
+  # Пункт, который не реализован и не является необходимым (без возможности перехода)
+  - { title: Расширенные шейдеры, icon: ph:sparkle, status: planned }

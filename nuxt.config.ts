@@ -9,26 +9,56 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxtjs/i18n'
   ],
-
   i18n: {
-    // meta: false,
-    // strategy: 'prefix_except_default',
-    strategy: 'prefix',
     locales: [
-      { code: 'en', iso: 'en-US', name: 'English' },
-      { code: 'ru', iso: 'ru-RU', name: 'Русский' },
-      // ... другие языки
+      {code: 'ru', iso: 'ru-RU', name: 'Русский'},
     ],
-    defaultLocale: 'rue',
+    defaultLocale: 'ru',
   },
+  // i18n: {
+  //   // legacy: false,
+  //   // strategy: 'prefix_except_default',
+  //   strategy: 'prefix',
+  //   locales: [
+  //     { code: 'en', iso: 'en-US', name: 'English' },
+  //     { code: 'ru', iso: 'ru-RU', name: 'Русский' },
+  //     // ... другие языки
+  //   ],
+  //   defaultLocale: 'ru',
+  //   detectBrowserLanguage: {
+  //     useCookie: true,
+  //     cookieKey: 'i18n_redirected',
+  //     redirectOn: 'root',
+  //   }
+  // },
 
-  content: {
-    // Включаем экспериментальные функции для поиска
-      // Включаем индексированный поиск
-      search: {
-        indexed: true
-    }
-  },
+  // content: {
+  //   // 👇 Оберните конфигурацию поиска в 'experimental'
+  //   experimental: {
+  //     clientDB: true,
+  //   },
+  //
+  //   // Не забудьте оставить эту опцию из предыдущего шага
+  //   locales: ['en', 'ru']
+  // },
+
+  // content: {
+  //   // Включаем экспериментальные функции для поиска
+  //     // Включаем индексированный поиск
+  //     search: {
+  //       indexed: true
+  //   }
+  // },
+  // content: {
+  //   // Включаем поддержку i18n
+  //   i18n: {
+  //     // Имя поля для языка в метаданных файла (frontmatter)
+  //     // Если у вас нет явного поля, content будет использовать суффиксы (.en.md)
+  //     field: 'locale',
+  //     // Если Content Navigation не работает, попробуйте явно указать ваши языки
+  //     // locales: ['en', 'ru'],
+  //   },
+  // },
 
   app: {
     // ВАЖНО: Укажите имя вашего репозитория (включая слеши)
@@ -43,7 +73,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
+    '/docs': {redirect: '/docs/getting-started/introduction', prerender: false},
     // '/**': { prerender: true }//todo: это точно нужно?
   },
 

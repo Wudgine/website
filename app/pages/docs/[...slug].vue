@@ -30,7 +30,7 @@ defineOgImageComponent('Saas')
 </script>
 
 <template>
-  <UPage v-if="page" class="flex lg:flex flex-row">
+  <UPage v-if="page" class="flex lg:flex flex-row lg:grid-cols-none!">
 
     <UContentToc class="overflow-y-hidden! lg:hidden" highlight highlight-color="neutral" color="neutral"
                  :links="page.body.toc.links"/>
@@ -60,9 +60,9 @@ defineOgImageComponent('Saas')
     >
             <PageSidebar
               :default-width="280"
-              :min-width="200"
+              :min-width="135"
               :max-width="600"
-              :collapsed-width="72"
+              :collapsed-width="80"
               side="right"
               v-if="page?.body?.toc?.links?.length"
               class="top-0 h-screen hidden! lg:sticky! lg:flex!"

@@ -1,0 +1,12 @@
+title: Плагины
+icon: ph:puzzle-piece
+navigation:
+  - { title: Обзор, icon: ph:info, to: /plugins }
+  - { title: Создание плагинов, icon: ph:code, to: /plugins/creating-plugins }
+  - { title: API плагинов, icon: ph:brackets-curly, to: /plugins/plugin-api }
+  - { title: Примеры плагинов, icon: ph:lightbulb, to: /plugins/plugin-examples }
+  - { title: Публикация плагинов, icon: ph:upload, to: /plugins/publishing-plugins }
+  # Пример критически важного неактивного пункта
+  - { title: Маркетплейс плагинов, icon: ph:shopping-cart, status: critical }
+  # Пример некритичного неактивного пункта
+  - { title: Система рейтингов плагинов, icon: ph:star, status: planned }

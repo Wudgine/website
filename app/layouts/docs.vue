@@ -39,8 +39,8 @@ const isCollapsedRightPanel = ref(false);
       </UDashboardPanel>
     </UDashboardGroup>
     <UMain>
-      <UContainer class="p-0 m-0 lg:p-0! lg:m-0!">
-        <UPage class="flex lg:flex flex-row">
+      <UContainer class="p-0 m-0 lg:p-0! lg:m-0! max-w-full!">
+        <UPage class="flex lg:flex flex-row lg:grid-cols-none!">
           <template #left>
             <!--      <template v-if="page?.body?.toc?.links?.length" #left>-->
 
