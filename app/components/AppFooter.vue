@@ -96,7 +96,7 @@ function onSubmit() {
 
     <template #right>
       <UButton
-        to="https://go.nuxt.com/discord"
+        to="https://discord.com/wudgine"
         target="_blank"
         icon="i-simple-icons-discord"
         aria-label="Nuxt on Discord"
@@ -104,21 +104,21 @@ function onSubmit() {
         variant="ghost"
       />
       <UButton
-        to="https://go.nuxt.com/x"
+        to="https://telegram.me/wudgine"
         target="_blank"
         icon="i-simple-icons-x"
         aria-label="Nuxt on X"
         color="neutral"
         variant="ghost"
       />
-      <UButton
-        to="https://github.com/nuxt-ui-templates/saas"
-        target="_blank"
-        icon="i-simple-icons-github"
-        aria-label="Nuxt UI on GitHub"
-        color="neutral"
-        variant="ghost"
-      />
+<!--      <UButton-->
+<!--        to="https://github.com/nuxt-ui-templates/saas"-->
+<!--        target="_blank"-->
+<!--        icon="i-simple-icons-github"-->
+<!--        aria-label="Nuxt UI on GitHub"-->
+<!--        color="neutral"-->
+<!--        variant="ghost"-->
+<!--      />-->
     </template>
   </UFooter>
 </template>
